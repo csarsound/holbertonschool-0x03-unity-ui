@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 2000f;
     private int score = 0;
     public int health = 5;
+    public Text scoreText;
 
     void Update()
     {
