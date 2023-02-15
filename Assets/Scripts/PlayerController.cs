@@ -107,8 +107,9 @@ public class PlayerController : MonoBehaviour
             over.SetActive(true);
             StartCoroutine(LoadScene(3));
         }
-        
-                
+
+        if (Input.GetButton("Cancel"))
+        SceneManager.LoadScene("menu");
     }
     // Charge The Scene
         IEnumerator LoadScene(float seconds)
