@@ -23,6 +23,11 @@ public class PlayerController : MonoBehaviour
     // sensetivity is still 2000f?
     public float speed = 3000f;
     public int health = 5;
+    // Variables Win
+    public Text WinLoseText;
+    public Image WinLoseImage;
+    public GameObject win;
+    public GameObject over;
     
     // Start is called before the first frame update
     void Start()
@@ -80,7 +85,11 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Goal"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            //Debug.Log("You win!");
+            WinLoseText.color = Color.black;
+            WinLoseImage.color = Color.green;
+            WinLoseText.text = "You win!";
+            win.SetActive(true);
         }
         
                 
@@ -90,9 +99,11 @@ public class PlayerController : MonoBehaviour
     {
         if (health == 0)
         {
-            
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
+            //Debug.Log("Game Over!");
+            WinLoseText.color = Color.white;
+            WinLoseImage.color = Color.red;
+            WinLoseText.text = "Game Over!";
+            over.SetActive(true);
         }
         
                 

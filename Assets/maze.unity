@@ -1882,6 +1882,10 @@ MonoBehaviour:
   healthText: {fileID: 303826197}
   speed: 2000
   health: 5
+  WinLoseText: {fileID: 1415820444}
+  WinLoseImage: {fileID: 1047962810}
+  win: {fileID: 1047962808}
+  over: {fileID: 1047962808}
 --- !u!1 &381359941
 GameObject:
   m_ObjectHideFlags: 0
