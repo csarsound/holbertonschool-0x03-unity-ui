@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
             WinLoseImage.color = Color.green;
             WinLoseText.text = "You win!";
             win.SetActive(true);
+            StartCoroutine(LoadScene(3));
         }
         
                 
@@ -104,9 +105,17 @@ public class PlayerController : MonoBehaviour
             WinLoseImage.color = Color.red;
             WinLoseText.text = "Game Over!";
             over.SetActive(true);
+            StartCoroutine(LoadScene(3));
         }
         
                 
     }
-    
+    // Charge The Scene
+        IEnumerator LoadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene("Maze");
+        score = 0;
+        health = 5;
+    }
 }
