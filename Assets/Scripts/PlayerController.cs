@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 300f;
     public int health = 5;
     public Text scoreText; 
+    public Text HealthText;
 
     // This is a reference to the Rigibody
     public Rigidbody rb;
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Pickup")
         {
             score += 1;
-            //  Show Score on screen
+            //  Show Score on Canvas
             SetScoreText();
             Debug.Log($"Score: {score}");
             other.gameObject.SetActive(false);
@@ -71,6 +72,8 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Trap")
         {
             health -= 1;
+            // Show Score on Canvas
+            SetHealthText();
             Debug.Log($"Health: {health}");
         }
 
@@ -82,6 +85,11 @@ public class PlayerController : MonoBehaviour
         void SetScoreText()
         {
             scoreText.text = $"Score: {score.ToString()}";
+        }
+
+        void SetHealthText()
+        {
+            HealthText.text = $"Health: {health.ToString()}";
         }
     }
 }
