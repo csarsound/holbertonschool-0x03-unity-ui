@@ -1962,6 +1962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 300
   health: 5
+  scoreText: {fileID: 1164116104}
   rb: {fileID: 331686900}
 --- !u!1 &337994130
 GameObject:
