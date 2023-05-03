@@ -30,10 +30,11 @@ public class PlayerController : MonoBehaviour
     {
         if (health == 0)
         {
-            winLose.SetActive(true); //Active canvas GameOver
+            winLose.SetActive(true);
             winLoseImg.color = new Color(1, 0, 0, 1);
-            winLoseImg.color = new Color(1, 1, 1, 1);
-            SceneManager.LoadScene("maze"); //load scene
+            winLoseText.color = new Color(1, 1, 1, 1);
+            winLoseText.text = "Game Over!";
+            StartCoroutine(LoadScene(3));
         }
     }
 
@@ -99,5 +100,10 @@ public class PlayerController : MonoBehaviour
         {
             HealthText.text = $"Health: {health.ToString()}";
         }
+    }
+    IEnumerator LoadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(0);
     }
 }
