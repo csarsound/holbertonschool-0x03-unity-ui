@@ -30,7 +30,9 @@ public class PlayerController : MonoBehaviour
     {
         if (health == 0)
         {
-            Debug.Log("Game Over!");
+            winLose.SetActive(true); //Active canvas GameOver
+            winLoseImg.color = new Color(1, 0, 0, 1);
+            winLoseImg.color = new Color(1, 1, 1, 1);
             SceneManager.LoadScene("maze"); //load scene
         }
     }
