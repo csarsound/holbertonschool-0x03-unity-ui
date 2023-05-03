@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
             winLoseText.text = "YouWin!";
             winLoseText.color = new Color(0, 0, 0, 1);
             winLoseImg.color = new Color(0,1,0);
+            StartCoroutine(LoadScene(3));
         }
 
         void SetScoreText()
