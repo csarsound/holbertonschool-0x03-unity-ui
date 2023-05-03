@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public int health = 5;
     public Text scoreText; 
     public Text HealthText;
+    public GameObject winLose;
+    public Image winLoseImg;
+    public Text winLoseText;
 
     // This is a reference to the Rigibody
     public Rigidbody rb;
@@ -79,7 +82,10 @@ public class PlayerController : MonoBehaviour
 
         if (other.tag == "Goal")
         {
-            Debug.Log($"You win!");
+            winLose.SetActive(true);
+            winLoseText.text = "YouWin!";
+            winLoseText.color = new Color(0, 0, 0, 1);
+            winLoseImg.color = new Color(0,1,0);
         }
 
         void SetScoreText()
